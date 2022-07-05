@@ -1,10 +1,6 @@
 
 def carData():
-    #Get Data for all Honda Cars
-    #https://rapidapi.com/principalapis/api/car-data/
-
+    make = 'Honda'
     return
-
-
 
 print('main.py here')
