@@ -3,6 +3,10 @@ import json
 import urllib
 from sqlalchemy import create_engine
 
+def add_fun(num1, num2):
+    return (num1 + num2)
+
+
 def createDatabase():
     #create database cars; 
     return 
