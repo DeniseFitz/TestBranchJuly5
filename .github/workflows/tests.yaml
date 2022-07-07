@@ -14,7 +14,21 @@ jobs:
 
       - name: Install tools
         run: python -m pip install --upgrade pip pytest
+        run: python -m pip install pandas
+        run: python -m pip install requests
+        run: pip install coverage                            
 
       - name: Test with unittest
+        run: python3 -m unittest main_test.py
+          
+      - name: Check code coverage                        #new from here down
         run: |
-          python3 -m unittest main.py
+          python3 -m coverage run -m unittest main_test.py
+          python3 -m coverage report
+          python3 -m coverage html
+          
+      - name: Archive code coverage HTML report
+        uses: actions/upload-artifact@v2
+        with:
+           name: code-coverage-report
+           path: htmlcov
